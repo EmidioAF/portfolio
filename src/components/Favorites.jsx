@@ -56,7 +56,7 @@ function Row({ label, items }) {
   return (
     <div className="mb-4 last:mb-0">
       <div className="text-[11px] text-dim mb-2">{label}</div>
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-4 gap-2">
         {items.map((it) => (
           <Card key={it.title} item={it} />
         ))}
@@ -71,7 +71,7 @@ export default function Favorites() {
       <h3 className="text-xs text-dim font-semibold border-b border-line pb-2 mb-3">
         Favoritos
       </h3>
-      <Row label="Jogos" items={games} />
+      <Row label="Jogos e Séries" items={games} />
       <Row label="Músicas" items={music} />
     </div>
   );
