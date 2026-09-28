@@ -10,7 +10,7 @@ export default function Summary() {
         <dt className="text-dim text-[11px] mt-3">Interesses</dt>
         <dd className="text-white mt-0.5">Análise de Dados, Engenharia de Dados, Análise de Sistemas</dd>
         <dt className="text-dim text-[11px] mt-3">Objetivo</dt>
-        <dd className="text-white mt-0.5">Especialização em análise e engenharia de dados</dd>
+        <dd className="text-white mt-0.5">Especialização em dados</dd>
       </dl>
     </div>
   );
