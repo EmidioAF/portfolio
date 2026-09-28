@@ -14,7 +14,7 @@ const items = [
     role: "Colégio da Polícia Militar do Paraná (CPM-PR)",
     dates: "2018 — 2024",
     summary:
-      "Graduado em Ensino Fundamental II e Médio. Ética, conduta, disciplina e responsabilidade foram valores adquiridos durante minha formação acadêmica.",
+      "Graduado em Ensino Fundamental II e Médio. Ética, conduta, disciplina e responsabilidade.",
   },
   {
     logo: "EM",
@@ -23,7 +23,7 @@ const items = [
     role: "Pontifícia Universidade Católica do Paraná (PUCPR)",
     dates: "2025 — 2026",
     summary:
-      "Cursei até o 4° Período, ao final de 2026, me transferi para Gestão da Informação na UFPR pelo Provar 2027. Adquiri conhecimentos avançados em desenvolvimento de software, análise de sistemas, banco de dados, tecnologias emergentes, servidores e redes.",
+      "Cursei até o 4° Período, me transferindo para a UFPR ao final de 2026. Adquiri conhecimentos avançados em desenvolvimento de software, análise de sistemas, banco de dados, tecnologias emergentes, servidores e redes.",
   },
     {
     logo: "EM",
@@ -32,7 +32,7 @@ const items = [
     role: "Universidade Federal do Paraná (UFPR)",
     dates: "2026 — atual",
     summary:
-      "Transferido de BSI para BGI. Estou adquirindo conhecimentos em gestão de informações e tecnologia da informação, bancos de dados e otimização de processos, programação voltada para gerir e controlar fluxos de dados.",
+      "Estou adquirindo conhecimentos em gestão e tecnologias da informação, bancos de dados, otimização de processos e programação voltada para gerir/controlar fluxos.",
   },
   {
     logo: "TS",
@@ -41,16 +41,16 @@ const items = [
     role: "Assoçiação dos Servidores Públicos do Paraná (ASPP)",
     dates: "03/2023 — 11/24",
     summary:
-      "Atuei como Menor Aprendiz, desempenhando funções administrativas e de suporte. Adquiri experiência prática em rotinas de escritório, organização de documentos, suporte N1 e N2 e reparos/ajustes em máquinas.",
+      "Desempenhei funções administrativas e de suporte. Adquiri experiência prática em rotinas de escritório, organização de documentos, suporte N1 e N2 e reparos/ajustes em máquinas.",
   },
   {
     logo: "CP",
     logoImg: compasaLogo,
     title: "Estagiário",
-    role: "Compasa do Brasil",
+    role: "Compasa do Brasil - Engenharia e Empreendimentos",
     dates: "20/07 - atual",
     summary:
-      "Atualmente, atuo como suporte N1 e N2, configuração de computadores Windows, Active Directory e Microsoft 365. Também desenvolvo automações em PowerShell e batch para padronizar processos, reduzir tarefas manuais e melhorar a operação de TI."
+      "Atuo como suporte N1 e N2, configuração de computadores, Active Directory e Microsoft 365. Desenvolvo também automações em PowerShell e batch."
   },
 
     {

@@ -13,7 +13,7 @@ const techs = [
   { name: "PowerShell", icon: TbBrandPowershell, color: "#5391fe", level: 2 },
   { name: "Microsoft 365", icon: FaMicrosoft, color: "#e3e3e3", level: 3 },
   { name: "Servidores", icon: TbServer, color: "#9a9a9a", level: 2 },
-  { name: "Git", icon: SiGit, color: "#f05032", level: 3 },
+  { name: "Git", icon: SiGit, color: "#f05032", level: 2 },
   { name: "SQL", icon: SiMysql, color: "#4479a1", level: 3 },
 ];
 

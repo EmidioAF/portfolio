@@ -9,9 +9,10 @@ import DecorFrame from "./components/DecorFrame";
 
 export default function App() {
   return (
-    <div className="relative w-full">
-      <DecorFrame />
-      <div className="max-w-[1000px] mx-auto px-4 py-6 pb-16">
+    <div className="w-full">
+      <div className="flex items-start w-full max-w-[1320px] mx-auto">
+        <DecorFrame />
+        <div className="flex-1 min-w-0 max-w-[1000px] px-4 py-6 pb-16">
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-5">
           <div>
@@ -27,6 +28,7 @@ export default function App() {
         </div>
         <footer className="text-center text-dim text-xs mt-8">
         </footer>
+      </div>
       </div>
     </div>
   );
