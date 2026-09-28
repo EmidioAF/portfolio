@@ -14,7 +14,7 @@ const items = [
     role: "Colégio da Polícia Militar do Paraná (CPM-PR)",
     dates: "2018 — 2024",
     summary:
-      "Graduado em Ensino Fundamental II e Médio. Ética, conduta, disciplina e responsabilidade.",
+      "Conclusão do Ensino Fundamental II e Médio. Ética, conduta, disciplina e responsabilidade.",
   },
   {
     logo: "EM",
