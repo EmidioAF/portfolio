@@ -60,7 +60,7 @@ function Pill({ tech }) {
 
 export default function TechStack() {
   return (
-    <div className="bg-panel border border-line rounded-sm p-4 mb-4">
+    <div className="bg-panel border border-line rounded-sm p-2.5 mb-4">
       <h3 className="text-xs text-dim font-semibold border-b border-line pb-2 mb-3 flex justify-between">
         Tecnologias <span className="text-white">{techs.length}</span>
       </h3>
