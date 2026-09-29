@@ -52,16 +52,7 @@ const items = [
     summary:
       "Atuo como suporte N1 e N2, configuração de computadores, Active Directory e Microsoft 365. Desenvolvo também automações em PowerShell e batch."
   },
-
-    {
-    logo: "--",
-    title: "--",
-    role: "--",
-    dates: "--",
-    summary:
-      "--"
-  },
-];
+]
 
 function ExpItem({ item }) {
   const [open, setOpen] = useState(false);

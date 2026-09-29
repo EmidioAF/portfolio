@@ -1,6 +1,9 @@
+import { FaMicrosoft } from "react-icons/fa";
+
 const certs = [
-  { name: "Nome da certificação", issuer: "Instituição emissora", date: "Emitido em —" },
-  { name: "Nome da certificação", issuer: "Instituição emissora", date: "Emitido em —" },
+  { name: "Conceitos básicos de dados do Azure", issuer: "Microsoft Certified", date: "Em curso" },
+  { name: "Azure Databricks Engenheiro de Dados Associado", issuer: "Certificação da Microsoft", date: "Pretensão" },
+  { name: "Power BI Analista de Dados Associate", issuer: "Certificação da Microsoft", date: "Pretensão" },
 ];
 
 export default function Certifications() {
@@ -14,8 +17,8 @@ export default function Certifications() {
           key={i}
           className="flex gap-3 py-2.5 border-b border-white/5 last:border-none group"
         >
-          <div className="w-10 h-10 shrink-0 rounded bg-panel2 border border-line flex items-center justify-center text-[11px] font-bold text-white group-hover:border-white transition-colors">
-            ?
+          <div className="w-10 h-10 shrink-0 rounded bg-panel2 border border-line flex items-center justify-center group-hover:border-white transition-colors">
+            <FaMicrosoft size={16} color="#00a4ef" />
           </div>
           <div>
             <b className="text-white text-sm block">{c.name}</b>
