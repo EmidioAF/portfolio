@@ -125,17 +125,6 @@ const toggle = (key) => setOpen(open === key ? null : key);
         </AnimatePresence>
       </li>
       ))}
-      <li>
-      ▸ GITHUB{" "}
-      <a
-        href="https://github.com/EmidioAF"
-        target="_blank"
-        rel="noreferrer"
-        className="text-gray-300 border-b border-transparent hover:text-white hover:border-white"
-      >
-        [github.com/EmidioAF]
-      </a>
-      </li>
       </ul>
       </div>
       <div className="ml-auto text-right">
