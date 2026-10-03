@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SiJavascript, SiPython } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import { TbBrandPowershell } from "react-icons/tb";
+import { TbDatabase } from "react-icons/tb";
 
 const items = [
   {
-    logo: "",
+    icon: TbBrandPowershell,
+    iconColor: "#5391fe",
     title: "Scripts de Padronização",
     role: "Automação de TI · PowerShell e Batch",
     dates: "2026",
@@ -11,27 +16,29 @@ const items = [
       "Scripts para apoiar a preparação e padronização de computadores Windows, incluindo configuração de energia e uma rotina em batch relacionada a serial e domínio. Repositório privado: a implementação não está disponível publicamente.",
     link: "",
   },
-    {
-    logo: "",
+  {
+    icon: SiPython,
+    iconColor: "#3776ab",
     title: "Conectividade e Sistemas Ciberfísicos",
     role: "Redes · Python e UDP multicast",
     dates: "2026",
     summary:
-    "Projetos de conectividade com uma implementação cliente-servidor em Python usando UDP multicast. O repositório também reúne um arquivo de simulação de rede e a documentação do projeto.",
+      "Projetos de conectividade com uma implementação cliente-servidor em Python usando UDP multicast. O repositório também reúne um arquivo de simulação de rede e a documentação do projeto.",
     link: "https://github.com/EmidioAF/Projetos-Conectividade-Sistemas-Ciberfisicos",
-    },
-    {
-    logo: "",
+  },
+  {
+    icon: FaJava,
+    iconColor: "#e76f00",
     title: "Segurança da Informação",
     role: "Segurança web · Java e HTTPS",
     dates: "2026",
     summary:
-    "Projeto de segurança da informação com um servidor HTTPS desenvolvido em Java e uma página HTML para demonstrar a aplicação.",
+      "Projeto de segurança da informação com um servidor HTTPS desenvolvido em Java e uma página HTML para demonstrar a aplicação.",
     link: "https://github.com/EmidioAF/Projeto-Seg.-Informacao",
-    },
-
+  },
   {
-    logo: "",
+    icon: SiJavascript,
+    iconColor: "#f7df1e",
     title: "TechStore",
     role: "Aplicação web · JavaScript",
     dates: "2026",
@@ -39,17 +46,19 @@ const items = [
       "Projeto de loja virtual com frontend desenvolvido com Vite e backend próprio em JavaScript. O repositório separa a interface da camada de servidor e inclui arquivos para dados e uploads.",
     link: "https://github.com/EmidioAF/TechStore",
   },
+{
+  icon: TbDatabase,
+  iconColor: "#9a9a9a",
+  title: "The Keep",
+  role: "Aplicação web · Python e SQL",
+  dates: "2026",
+  summary:
+    "Aplicação desenvolvida no projeto de Experiência Criativa. O código está organizado em módulos de autenticação, acesso ao banco de dados e rotas, além de incluir esquema SQL, templates e arquivos estáticos.",
+  link: "https://github.com/EmidioAF/Projeto-Exp.-Criativa",
+},
   {
-    logo: "",
-    title: "The Keep",
-    role: "Aplicação web · Python e SQL",
-    dates: "2026",
-    summary:
-      "Aplicação desenvolvida no projeto de Experiência Criativa. O código está organizado em módulos de autenticação, acesso ao banco de dados e rotas, além de incluir esquema SQL, templates e arquivos estáticos.",
-    link: "https://github.com/EmidioAF/Projeto-Exp.-Criativa",
-  },
-  {
-    logo: "",
+    icon: SiJavascript,
+    iconColor: "#f7df1e",
     title: "Gelo Fino",
     role: "Jogo web · JavaScript",
     dates: "2026",
@@ -58,7 +67,8 @@ const items = [
     link: "https://github.com/EmidioAF/Gelo-Fino",
   },
   {
-    logo: "",
+    icon: SiPython,
+    iconColor: "#3776ab",
     title: "Batalha Naval 2.0",
     role: "Jogo · Python",
     dates: "2025",
@@ -70,14 +80,15 @@ const items = [
 
 function ProjectItem({ item }) {
   const [open, setOpen] = useState(false);
+  const Icon = item.icon;
   return (
     <div
       className="relative flex gap-3 py-2.5 border-b border-white/5 last:border-none"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <div className="w-11 h-11 shrink-0 rounded bg-panel2 border border-line flex items-center justify-center text-xs font-bold text-white hover:border-white transition-colors">
-        {item.logo}
+      <div className="w-11 h-11 shrink-0 rounded bg-panel2 border border-line flex items-center justify-center hover:border-white transition-colors">
+        <Icon size={20} color={item.iconColor} />
       </div>
       <div>
         {item.link && item.link !== "#" ? (

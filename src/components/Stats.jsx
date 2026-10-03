@@ -1,7 +1,7 @@
-import { FaWhatsapp, FaDiscord, FaInstagram, FaEnvelope, FaLinkedin, FaGithub, FaReddit } from "react-icons/fa";
+import { FaWhatsapp, FaDiscord, FaInstagram, FaEnvelope, FaLinkedin, FaGithub, FaReddit, FaFileDownload } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const stats = [{ label: "Projetos", value: 4 }];
+const stats = [{ label: "Projetos atuais", value: 4 }];
 
 const contacts = [
     {
@@ -11,6 +11,24 @@ const contacts = [
     href: "https://linkedin.com/in/emidioaf",
   },
   {
+    name: "GitHub",
+    icon: FaGithub,
+    color: "#ffffff",
+    href: "https://github.com/EmidioAF",
+  },
+  {
+    name: "Currículo",
+    icon: FaFileDownload,
+    color: "#ffffff",
+    href: "/curriculo.pdf", // coloque o PDF em public/curriculo.pdf
+  },
+  {
+    name: "E-mail",
+    icon: FaEnvelope,
+    color: "#c7c7c7",
+    href: "mailto:angelottiemidio@gmail.com",
+ },
+ {
     name: "WhatsApp",
     icon: FaWhatsapp,
     color: "#25d366",
@@ -27,12 +45,6 @@ const contacts = [
     icon: FaInstagram,
     color: "#e4405f",
     href: "https://instagram.com/emidio.angelotti",
-  },
-  {
-    name: "E-mail",
-    icon: FaEnvelope,
-    color: "#c7c7c7",
-    href: "mailto:angelottiemidio@gmail.com",
   },
   {
     name: "Twitter / X",
@@ -72,7 +84,7 @@ export default function Stats() {
             <a
               key={c.name}
               href={c.href}
-              target="_blank"
+              target={c.href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer"
               title={c.name}
               aria-label={c.name}
