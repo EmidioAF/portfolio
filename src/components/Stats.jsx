@@ -20,7 +20,7 @@ const contacts = [
     name: "Currículo",
     icon: FaFileDownload,
     color: "#ffffff",
-    href: "/curriculo.pdf", // coloque o PDF em public/curriculo.pdf
+    href: `${import.meta.env.BASE_URL}curriculo.pdf`,
   },
   {
     name: "E-mail",
