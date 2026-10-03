@@ -9,7 +9,7 @@ export default function DecorFrame() {
   return (
     <div
       className="hidden lg:block shrink-0 self-start mt-24 ml-4"
-      style={{ width: "clamp(120px, 14vw, 240px)" }}
+      style={{ width: "clamp(200px, 50vw, 240px)" }}
     >
       {decorImg ? (
         <img src={decorImg} alt="" className="w-full h-auto object-contain" />

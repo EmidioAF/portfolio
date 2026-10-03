@@ -29,7 +29,6 @@ export default function App() {
             </div>
           </div>
           <footer className="text-center text-dim text-xs mt-8">
-            Portfólio — layout inspirado em Steam Profile
           </footer>
         </div>
       </div>

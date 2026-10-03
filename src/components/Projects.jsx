@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SiJavascript, SiPython } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { TbBrandPowershell } from "react-icons/tb";
-import { TbDatabase } from "react-icons/tb";
+import { SiMysql } from "react-icons/si";
 
 const items = [
   {
@@ -47,8 +47,8 @@ const items = [
     link: "https://github.com/EmidioAF/TechStore",
   },
 {
-  icon: TbDatabase,
-  iconColor: "#9a9a9a",
+  icon: SiMysql,
+  iconColor: "#4479a1",
   title: "The Keep",
   role: "Aplicação web · Python e SQL",
   dates: "2026",
