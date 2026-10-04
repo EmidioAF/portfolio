@@ -7,6 +7,7 @@ import Summary from "./components/Summary";
 import Stats from "./components/Stats";
 import Favorites from "./components/Favorites";
 import DecorFrame from "./components/DecorFrame";
+import FadeIn from "./components/FadeIn";
 
 export default function App() {
   return (
@@ -17,15 +18,15 @@ export default function App() {
           <Header />
           <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-5">
             <div>
-              <Projects />
-              <Experience />
-              <Certifications />
-              <Favorites />
+              <FadeIn delay={0.1}><Projects /></FadeIn>
+              <FadeIn delay={0.2}><Experience /></FadeIn>
+              <FadeIn delay={0.3}><Certifications /></FadeIn>
+              <FadeIn delay={0.4}><Favorites /></FadeIn>
             </div>
             <div>
-              <TechStack />
-              <Summary />
-              <Stats />
+              <FadeIn delay={0.1}><TechStack /></FadeIn>
+              <FadeIn delay={0.2}><Summary /></FadeIn>
+              <FadeIn delay={0.3}><Stats /></FadeIn>
             </div>
           </div>
           <footer className="text-center text-dim text-xs mt-8">
