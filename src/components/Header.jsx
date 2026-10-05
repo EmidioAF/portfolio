@@ -69,7 +69,7 @@ const toggle = (key) => setOpen(open === key ? null : key);
 
       <div>
         <h1 className="text-xl font-semibold text-white mb-1">Kirin</h1>
-        <p className="text-sm text-dim mb-2">Estudante &amp; Analista/Desenvolvedor</p>
+        <p className="text-sm text-dim mb-2">Estudante &amp; Aspirante a Analista/Desenvolvedor</p>
 <ul className="text-sm space-y-1">
   {[
     { key: "sobre", label: "SOBRE MIM" },
