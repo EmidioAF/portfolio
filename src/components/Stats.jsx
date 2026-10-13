@@ -56,7 +56,7 @@ const contacts = [
   name: "Reddit",
   icon: FaReddit,
   color: "#ff4500",
-  href: "https://reddit.com/user/Azazel_SCP",
+  href: "https://reddit.com/user/SCP_Kirin",
 },
 ];
 
