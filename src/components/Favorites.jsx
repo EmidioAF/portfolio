@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import hsrLogo from "../assets/favorites/hsr.png";
 import wuwaLogo from "../assets/favorites/wuwa.png";
 import valorantLogo from "../assets/favorites/val.png";
@@ -40,29 +41,60 @@ const music = [
 ];
 
 function Card({ item }) {
+  const [hovered, setHovered] = useState(false); // só mouse
+  const [pinned, setPinned] = useState(false); // clique/toque
+  const open = hovered || pinned;
+
+  const toggle = () => {
+    if (pinned) {
+      setPinned(false);
+      setHovered(false); // recolhe mesmo com o mouse em cima
+    } else {
+      setPinned(true);
+    }
+  };
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.06, zIndex: 10 }}
-      transition={{ duration: 0.25 }}
-      className="relative aspect-[2/3] rounded overflow-hidden bg-panel2 border border-line cursor-default origin-center"
+    <button
+      type="button"
+      aria-expanded={open}
+      onClick={toggle}
+      onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}
+      onPointerLeave={(e) => e.pointerType === "mouse" && setHovered(false)}
+      className="text-left rounded overflow-hidden bg-panel2 border border-line hover:border-white focus-visible:border-white outline-none transition-colors"
     >
-      {item.cover ? (
-        <img src={item.cover} alt={item.title} className="w-full h-full object-cover" />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center text-dim text-xs text-center px-2">
-          {item.title}
+      <div className="flex items-start gap-2 p-2.5">
+        <div className="min-w-0 flex-1">
+          <b className="text-white text-sm block leading-tight">{item.title}</b>
+          <div className="text-xs text-dim mt-1 leading-snug">{item.note}</div>
         </div>
-      )}
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        whileHover={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-0 bottom-0 bg-black/85 p-3"
-      >
-        <b className="text-white text-sm block leading-tight">{item.title}</b>
-        <div className="text-xs text-dim mt-1 leading-snug">{item.note}</div>
-      </motion.div>
-    </motion.div>
+        <motion.span
+          animate={{ rotate: open ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="text-[10px] text-dim mt-0.5"
+        >
+          ▸
+        </motion.span>
+      </div>
+      <AnimatePresence initial={false}>
+        {open && item.cover && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden"
+          >
+            <img
+              src={item.cover}
+              alt={item.title}
+              loading="lazy"
+              className="w-full aspect-[2/3] object-cover"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </button>
   );
 }
 
@@ -70,7 +102,7 @@ function Row({ label, items }) {
   return (
     <div className="mb-4 last:mb-0">
       <div className="text-[11px] text-dim mb-2">{label}</div>
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 items-start">
         {items.map((it) => (
           <Card key={it.title} item={it} />
         ))}

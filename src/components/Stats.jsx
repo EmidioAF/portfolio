@@ -18,6 +18,8 @@ const contacts = [
   },
   {
     name: "Currículo",
+    label: "Baixar CV",
+    download: true,
     icon: FaFileDownload,
     color: "#ffffff",
     href: `${import.meta.env.BASE_URL}curriculo.pdf`,
@@ -86,11 +88,17 @@ export default function Stats() {
               href={c.href}
               target={c.href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer"
-              title={c.name}
-              aria-label={c.name}
-              className="w-10 h-10 rounded bg-panel2 border border-line flex items-center justify-center hover:border-white hover:scale-105 transition-all"
+              download={c.download ? "curriculo.pdf" : undefined}
+              aria-label={c.label || c.name}
+              className="group relative w-10 h-10 rounded bg-panel2 border border-line flex items-center justify-center hover:border-white hover:scale-105 focus-visible:border-white outline-none transition-all"
             >
               <Icon size={18} color={c.color} />
+              <span
+                role="tooltip"
+                className="pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#1e1e1e] border border-line rounded px-2 py-1 text-[10px] text-white opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity z-10"
+              >
+                {c.label || c.name}
+              </span>
             </a>
           );
         })}

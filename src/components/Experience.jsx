@@ -1,12 +1,30 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import cpmprLogo from "../assets/logos/cpmpr.png";
 import pucprLogo from "../assets/logos/pucpr.png";
 import ufprLogo from "../assets/logos/ufpr.png";
 import asppLogo from "../assets/logos/aspp.png";
 import compasaLogo from "../assets/logos/compasa.png";
+import usePopover from "../hooks/usePopover";
 
 const items = [
+    {
+    logo: "CP",
+    logoImg: compasaLogo,
+    title: "Estagiário",
+    role: "Compasa do Brasil - Engenharia e Empreendimentos",
+    dates: "07/2026 - atual",
+    summary:
+      "Atuo como suporte N1 e N2, configuração de computadores, Active Directory e Microsoft 365. Desenvolvo também automações em PowerShell e batch."
+  },
+  {
+    logo: "TS",
+    logoImg: asppLogo,
+    title: "Programa Menor Aprendiz",
+    role: "Associação dos Servidores Públicos do Paraná (ASPP)",
+    dates: "03/2023 — 11/24",
+    summary:
+      "Desempenhei funções administrativas e de suporte. Adquiri experiência prática em rotinas de escritório, organização de documentos, suporte N1 e N2 e reparos/ajustes em máquinas.",
+  },
   {
     logo: "EM",
     logoImg: cpmprLogo,
@@ -33,34 +51,15 @@ const items = [
     dates: "2026 — atual",
     summary:
       "Estou adquirindo conhecimentos em gestão e tecnologias da informação, bancos de dados, otimização de processos e programação voltada para gerir/controlar fluxos.",
-  },
-  {
-    logo: "TS",
-    logoImg: asppLogo,
-    title: "Programa Menor Aprendiz",
-    role: "Assoçiação dos Servidores Públicos do Paraná (ASPP)",
-    dates: "03/2023 — 11/24",
-    summary:
-      "Desempenhei funções administrativas e de suporte. Adquiri experiência prática em rotinas de escritório, organização de documentos, suporte N1 e N2 e reparos/ajustes em máquinas.",
-  },
-  {
-    logo: "CP",
-    logoImg: compasaLogo,
-    title: "Estagiário",
-    role: "Compasa do Brasil - Engenharia e Empreendimentos",
-    dates: "20/07 - atual",
-    summary:
-      "Atuo como suporte N1 e N2, configuração de computadores, Active Directory e Microsoft 365. Desenvolvo também automações em PowerShell e batch."
-  },
+  }
 ]
 
 function ExpItem({ item }) {
-  const [open, setOpen] = useState(false);
+  const [open, bind] = usePopover();
   return (
     <div
-      className="relative flex gap-3 py-2.5 border-b border-white/5 last:border-none"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      {...bind}
+      className="relative flex gap-3 py-2.5 border-b border-white/5 last:border-none outline-none"
     >
       <div className="w-11 h-11 shrink-0 rounded bg-panel2 border border-line flex items-center justify-center text-xs font-bold text-white hover:border-white transition-colors">
         {item.logoImg ? (

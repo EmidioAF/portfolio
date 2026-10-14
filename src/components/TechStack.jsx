@@ -1,30 +1,31 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SiJavascript, SiReact, SiNodedotjs, SiGit, SiMysql, SiPython, } from "react-icons/si";
+import { SiJavascript, SiReact, SiNodedotjs, SiGit, SiMysql, SiPython, SiHtml5 } from "react-icons/si";
 import { FaJava, FaMicrosoft } from "react-icons/fa";
-import { TbBrandPowershell, TbServer } from "react-icons/tb";
+import { TbBrandPowershell, TbServer, TbNetwork } from "react-icons/tb";
+import usePopover from "../hooks/usePopover";
 
 const techs = [
+  { name: "SQL", icon: SiMysql, color: "#4479a1", level: 2},
+  { name: "Python", icon: SiPython, color: "#3776ab", level: 2 },
+  { name: "Java", icon: FaJava, color: "#e76f00", level: 2 },
+  { name: "Microsoft 365", icon: FaMicrosoft, color: "#e3e3e3", level: 2 },
+  { name: "Redes", icon: TbNetwork, color: "#4fc3f7", level: 2 },
+  { name: "Windows Servers", icon: TbServer, color: "#9a9a9a", level: 1 },
+  { name: "Git", icon: SiGit, color: "#f05032", level: 2 },
+  { name: "PowerShell", icon: TbBrandPowershell, color: "#5391fe", level: 1 },
+  { name: "HTML/CSS", icon: SiHtml5, color: "#e34f26", level: 2 },
   { name: "JavaScript", icon: SiJavascript, color: "#f7df1e", level: 2 },
   { name: "React", icon: SiReact, color: "#61dafb", level: 1 },
   { name: "Node.js", icon: SiNodedotjs, color: "#3c873a", level: 1 },
-  { name: "Java", icon: FaJava, color: "#e76f00", level: 2 },
-  { name: "Python", icon: SiPython, color: "#3776ab", level: 2 },
-  { name: "PowerShell", icon: TbBrandPowershell, color: "#5391fe", level: 2 },
-  { name: "Microsoft 365", icon: FaMicrosoft, color: "#e3e3e3", level: 2 },
-  { name: "Servidores", icon: TbServer, color: "#9a9a9a", level: 1 },
-  { name: "Git", icon: SiGit, color: "#f05032", level: 2 },
-  { name: "SQL", icon: SiMysql, color: "#4479a1", level: 2},
 ];
 
 function Pill({ tech }) {
-  const [open, setOpen] = useState(false);
+  const [open, bind] = usePopover();
   const Icon = tech.icon;
   return (
     <div
-      className="relative w-12 h-12 rounded bg-panel2 border border-line flex items-center justify-center hover:border-white hover:scale-105 transition-all cursor-default"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      {...bind}
+      className="relative w-12 h-12 rounded bg-panel2 border border-line flex items-center justify-center hover:border-white hover:scale-105 transition-all cursor-default outline-none focus-visible:border-white"
     >
       <Icon size={22} color={tech.color} />
       <AnimatePresence>

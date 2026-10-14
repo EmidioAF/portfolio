@@ -12,16 +12,25 @@ const sobre =
 
 const projetos = [
   {
-    name: "TechStore",
-    desc: "E-commerce em React com autenticação e integração de API.",
-    link: "#",
+    name: "Dashboard de chamados de suporte",
+    status: "Em andamento",
+    desc: "Painel em Power BI com volume de chamados, tempo de resolução e categorias mais frequentes, usando dados fictícios.",
   },
   {
-    name: "Portfólio",
-    desc: "Este site, recriando a estrutura de um perfil Steam.",
-    link: "https://github.com/EmidioAF/portifolio",
+    name: "Painel de vendas (Power BI)",
+    status: "Em andamento (fase inicial)",
+    desc: "Modelo em estrela, medidas DAX básicas e filtros interativos por período, produto e região.",
   },
-  // adicione quantos quiser
+  {
+    name: "Análise exploratória com Python e SQL",
+    status: "Planejado",
+    desc: "Limpeza, análise e gráficos de um dataset público, publicando as conclusões em um relatório.",
+  },
+  {
+    name: "Pipeline de dados no Azure Databricks",
+    status: "Planejado",
+    desc: "Ingestão e transformação de dados em camadas, alinhado à certificação de Engenheiro de Dados.",
+  },
 ];
 
 function AvatarDecoration() {
@@ -69,11 +78,11 @@ const toggle = (key) => setOpen(open === key ? null : key);
 
       <div>
         <h1 className="text-xl font-semibold text-white mb-1">Kirin</h1>
-        <p className="text-sm text-dim mb-2">Estudante &amp; Aspirante a Analista/Desenvolvedor</p>
+        <p className="text-sm text-dim mb-2">Estudante &amp; Aspirante a Analista de Dados</p>
 <ul className="text-sm space-y-1">
   {[
     { key: "sobre", label: "SOBRE MIM" },
-    { key: "projetos", label: "PROJETOS" },
+    { key: "projetos", label: "PROJETOS ATUAIS E FUTUROS" },
   ].map(({ key, label }) => (
     <li key={key}>
       <button
@@ -103,21 +112,25 @@ const toggle = (key) => setOpen(open === key ? null : key);
               {key === "sobre" ? (
                 <p>{sobre}</p>
               ) : (
-                <ul className="space-y-2">
-                    {projetos.map((p) => (
-                      <li key={p.name}>
-                        <a
-                          href={p.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-white font-semibold hover:underline"
+                <ul className="space-y-3">
+                  {projetos.map((p) => (
+                    <li key={p.name}>
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-semibold">{p.name}</span>
+                        <span
+                          className={`text-[10px] px-1.5 py-0.5 rounded-full border ${
+                            p.status.startsWith("Em andamento")
+                              ? "border-green-400 text-green-400"
+                              : "border-line text-dim"
+                          }`}
                         >
-                          {p.name}
-                        </a>
-                        <div className="text-dim">{p.desc}</div>
-                      </li>
-                    ))}
-                  </ul>
+                          {p.status}
+                        </span>
+                      </div>
+                      <div className="text-dim">{p.desc}</div>
+                    </li>
+                  ))}
+                </ul>
                 )}
               </div>
             </motion.div>
@@ -129,7 +142,7 @@ const toggle = (key) => setOpen(open === key ? null : key);
       </div>
       <div className="ml-auto text-right">
         <span className="inline-block bg-panel2 border border-line text-white px-3.5 py-1 rounded-full text-sm font-semibold">
-          Nível 19
+          Idade: 19
         </span>
         <div className="mt-2 text-xs text-dim">
           <b className="block text-green-400 font-semibold text-sm">Disponível</b>

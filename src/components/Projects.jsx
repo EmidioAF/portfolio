@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiJavascript, SiPython } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { TbBrandPowershell } from "react-icons/tb";
 import { SiMysql } from "react-icons/si";
+import usePopover from "../hooks/usePopover";
 
 const items = [
   {
@@ -13,7 +13,7 @@ const items = [
     role: "Automação de TI · PowerShell e Batch",
     dates: "2026",
     summary:
-      "Scripts para apoiar a preparação e padronização de computadores Windows, incluindo configuração de energia e uma rotina em batch relacionada a serial e domínio. Repositório privado: a implementação não está disponível publicamente.",
+      "Automatizei a preparação e padronização de computadores Windows, reduzindo o tempo e o trabalho manual da configuração.",
     link: "",
   },
   {
@@ -79,13 +79,12 @@ const items = [
 ];
 
 function ProjectItem({ item }) {
-  const [open, setOpen] = useState(false);
+  const [open, bind] = usePopover();
   const Icon = item.icon;
   return (
     <div
-      className="relative flex gap-3 py-2.5 border-b border-white/5 last:border-none"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      {...bind}
+      className="relative flex gap-3 py-2.5 border-b border-white/5 last:border-none outline-none"
     >
       <div className="w-11 h-11 shrink-0 rounded bg-panel2 border border-line flex items-center justify-center hover:border-white transition-colors">
         <Icon size={20} color={item.iconColor} />
@@ -96,6 +95,7 @@ function ProjectItem({ item }) {
             href={item.link}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="text-white text-sm font-bold block hover:underline"
           >
             {item.title}
@@ -123,15 +123,26 @@ function ProjectItem({ item }) {
   );
 }
 
+const VISIBLE = 5; // quantos projetos aparecem antes do "Ver mais"
+const GITHUB = "https://github.com/EmidioAF?tab=repositories";
+
 export default function Projects() {
   return (
     <div className="bg-panel border border-line rounded-sm p-4 mb-4">
       <h3 className="text-xs text-dim font-semibold border-b border-line pb-2 mb-3">
         Projetos
       </h3>
-      {items.map((it, i) => (
+      {items.slice(0, VISIBLE).map((it, i) => (
         <ProjectItem key={i} item={it} />
       ))}
+      <a
+        href={GITHUB}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-block mt-3 text-xs text-white border border-line rounded px-3 py-1.5 hover:bg-white hover:text-black transition-colors"
+      >
+        Ver mais no GitHub →
+      </a>
     </div>
   );
 }
