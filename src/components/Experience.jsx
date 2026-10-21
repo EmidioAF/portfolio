@@ -12,9 +12,9 @@ const items = [
     logoImg: compasaLogo,
     title: "Estagiário",
     role: "Compasa do Brasil - Engenharia e Empreendimentos",
-    dates: "07/2026 - atual",
+    dates: "07/2026 - 10/2026",
     summary:
-      "Atuo como suporte N1 e N2, configuração de computadores, Active Directory e Microsoft 365. Desenvolvo também automações em PowerShell e batch."
+      "Atuo como suporte N1 e N2, configuração de computadores, Active Directory e Microsoft 365. Desenvolvo também automações em PowerShell e batch.              [Desligamento do contrato em virtude de reestruturação da empresa]",
   },
   {
     logo: "TS",
@@ -23,7 +23,7 @@ const items = [
     role: "Associação dos Servidores Públicos do Paraná (ASPP)",
     dates: "03/2023 — 11/24",
     summary:
-      "Desempenhei funções administrativas e de suporte. Adquiri experiência prática em rotinas de escritório, organização de documentos, suporte N1 e N2 e reparos/ajustes em máquinas.",
+      "Desempenhei funções administrativas e de suporte. Adquiri experiência prática em rotinas de escritório, organização de documentos, suporte N1 e N2 e reparos/ajustes em máquinas. [Desligamento do programa em virtude do fim do tempo de contrato]",
   },
   {
     logo: "EM",
@@ -32,7 +32,7 @@ const items = [
     role: "Colégio da Polícia Militar do Paraná (CPM-PR)",
     dates: "2018 — 2024",
     summary:
-      "Conclusão do Ensino Fundamental II e Médio. Ética, conduta, disciplina e responsabilidade.",
+      "Conclusão do Ensino Fundamental II e Médio. Ética, conduta, disciplina e responsabilidade foram alguns dos valores adquiridos em minha formação.",
   },
   {
     logo: "EM",
